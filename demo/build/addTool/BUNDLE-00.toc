@@ -1,0 +1,3 @@
+([('addTool',
+   '/Users/llwh/PycharmProjects/tulingPractice1/demo/dist/addTool',
+   'EXECUTABLE')],)
