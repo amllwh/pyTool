@@ -25,10 +25,12 @@ jobs:
 
     - name: Build EXE
       run: |
-        pyinstaller addTool.py --onefile
-      # ⚡ 改成你的入口文件，比如 addTool.py、main.py
+        pyinstaller addTool.py --onefile --distpath output/dist --workpath output/build
+      # 注意我这里加了 --distpath 和 --workpath，打包路径更干净，不污染源代码
 
-    - name: Upload EXE to Release
+    - name: Upload EXE to GitHub Release
       uses: softprops/action-gh-release@v2
       with:
-        files: dist/*.exe
+        files: output/dist/*.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOOL_TOKEN }}
