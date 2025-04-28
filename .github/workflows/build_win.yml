@@ -25,7 +25,7 @@ jobs:
 
     - name: Build EXE
       run: |
-        pyinstaller addTool.py --onefile --distpath output/dist --workpath output/build
+        pyinstaller addTool.py --onefile --noconsole --distpath output/dist --workpath output/build
       # 注意我这里加了 --distpath 和 --workpath，打包路径更干净，不污染源代码
 
     - name: Upload EXE to GitHub Release
